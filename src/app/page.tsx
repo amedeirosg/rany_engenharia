@@ -8,7 +8,7 @@ import Galpao from "../../public/assets/galpao.jpg";
 import LinhasDeVida from "../../public/assets/linha_de_vida.jpeg";
 import EscadaM from "../../public/assets/escada_marinheiro.jpg";
 import PMOC from "../../public/assets/ar.jpg";
-import Laudo from "../../public/assets/Laudos.png";
+// import Laudo from "../../public/assets/Laudos.png";
 import { MessageCircle, Instagram, Mail, MapPin } from "lucide-react";
 import WaterMark from "../../public/assets/watermark.png";
 export default function Home() {
@@ -36,7 +36,7 @@ export default function Home() {
           id="HeroHeader"
           className="flex justify-between items-center mt-[100px] "
         >
-          <div className="max-w-[527px] text-center flex flex-col gap-6 md:text-left">
+          <div className="md:max-w-[527px] md:ml-16 text-center flex flex-col gap-6 md:text-left">
             <div className="mb-[24px] flex flex-col gap-4 ">
               <h1 className="text-[40px] font-medium ">SOLUÇÕES EM PROJETOS</h1>
               <h2 className="text-[20px]">
@@ -50,7 +50,7 @@ export default function Home() {
               </button>
             </div>
           </div>
-          <div className="hidden md:flex">
+          <div className="hidden md:flex md:mr-16">
             <Image
               src={LogoHH}
               width={460}
@@ -87,11 +87,11 @@ export default function Home() {
               subtitle="Elaboração de PMOC, gestão dea tivos e manutenção preventiva."
               image={PMOC}
             />
-            <Cards
+            {/* <Cards
               title="Laudos e responsabilidades técnicas"
               subtitle="Emissões de ART, avaliações estruturais e de sistemas Mecânicos"
               image={Laudo}
-            />
+            /> */}
           </div>
         </div>
         <div
@@ -118,7 +118,7 @@ export default function Home() {
                 className="border-0 border-b-2 border-white focus:border-white focus:outline-none bg-transparent w-full h-[170px]"
               />
             </div>
-            <button className="bg-white text-black p-2.5 font-medium cursor-pointer">
+            <button className="bg-white text-black p-2.5 font-medium cursor-pointer hover:bg-gray-200">
               Enviar
             </button>
           </div>

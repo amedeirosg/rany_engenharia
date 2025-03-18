@@ -8,8 +8,8 @@ interface CardsConfig {
 
 export default function Cards({ title, subtitle, image }: CardsConfig) {
   return (
-    <div className="bg-white p-4 shadow-[4px_4px_10px_2px_rgba(0,0,0,0.3)] rounded flex flex-col items-center mt-[30px] gap-4">
-      <div className="w-full h-[300px] rounded bg-black flex justify-center items-center overflow-hidden">
+    <div className="bg-white p-4 shadow-[4px_4px_10px_2px_rgba(0,0,0,0.3)] rounded flex flex-col items-center mt-[30px] gap-4 cursor-pointer hover:scale-105 transtion-all ease-in-out duration-200">
+      <div className="w-full h-[300px] rounded  flex justify-center items-center overflow-hidden">
         <Image
           src={image}
           alt={title}
