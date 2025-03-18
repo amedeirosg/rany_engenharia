@@ -13,6 +13,8 @@ export default function Cards({ title, subtitle, image }: CardsConfig) {
         <Image
           src={image}
           alt={title}
+          width={1000}
+          height={1000}
           className="w-full h-full object-cover rounded"
         />
       </div>

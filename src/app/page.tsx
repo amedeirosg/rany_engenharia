@@ -1,16 +1,7 @@
 "use client";
 import Image from "next/image";
-import Logo from "../../public/assets/Logo.png";
-import LogoHH from "../../public/assets/logoHH.png";
-import Cards from "@/Components/cards/cards";
-import Rosca from "../../public/assets/rosca.jpg";
-import Galpao from "../../public/assets/galpao.jpg";
-import LinhasDeVida from "../../public/assets/linha_de_vida.jpeg";
-import EscadaM from "../../public/assets/escada_marinheiro.jpg";
-import PMOC from "../../public/assets/ar.jpg";
-// import Laudo from "../../public/assets/Laudos.png";
 import { MessageCircle, Instagram, Mail, MapPin } from "lucide-react";
-import WaterMark from "../../public/assets/watermark.png";
+import Cards from "@/Components/cards/cards";
 export default function Home() {
   return (
     <div className="px-8 md:px-16">
@@ -19,7 +10,7 @@ export default function Home() {
           className="flex justify-center cursor-pointer"
           onClick={() => window.location.reload()}
         >
-          <Image src={Logo} width={240} height={70} alt="logo" />
+          <Image src={"/Logo.png"} width={240} height={70} alt="logo" />
         </div>
 
         <ul className="md:flex gap-8 hidden">
@@ -52,7 +43,7 @@ export default function Home() {
           </div>
           <div className="hidden md:flex md:mr-16">
             <Image
-              src={LogoHH}
+              src={"/logoHH.png"}
               width={460}
               height={470}
               alt="logoRanyEngenharia"
@@ -65,27 +56,32 @@ export default function Home() {
             <Cards
               title="Projetos Mecânicos"
               subtitle="Desenvolvimento de projeto, montagem e dimensionamento de equipamentos mecânicos industriais"
-              image={Rosca}
+              image={"/rosca.jpg"}
             />
             <Cards
               title="Estruturas Metálicas"
               subtitle="Projeto, dimensionamento e montagem de galpões, mezaninos e passarelas."
-              image={Galpao}
+              image={"/galpao.jpg"}
             />
             <Cards
               title="Linhas de vida"
               subtitle="Projeto, inspeção, laudos e adequações de linhas de vida."
-              image={LinhasDeVida}
+              image={"/linha_de_vida.jpeg"}
             />
             <Cards
               title="Escadas Marinheiros"
               subtitle="Projeto, inspeção, laudos e adequações de escadas marinheiro."
-              image={EscadaM}
+              image={"/escada_marinheiro.jpg"}
             />
             <Cards
               title="PMOC"
               subtitle="Elaboração de PMOC, gestão dea tivos e manutenção preventiva."
-              image={PMOC}
+              image={"/ar.jpg"}
+            />
+            <Cards
+              title="PMOC"
+              subtitle="Elaboração de PMOC, gestão dea tivos e manutenção preventiva."
+              image={"/laudos.png"}
             />
             {/* <Cards
               title="Laudos e responsabilidades técnicas"
@@ -162,7 +158,7 @@ export default function Home() {
           </div>
 
           <div className="flex items-center justify-center mt-[16px] md:absolute bottom-10 right-20">
-            <Image src={WaterMark} alt="logo" />
+            <Image src={"/watermark.png"} alt="logo" width={200} height={200} />
           </div>
         </div>
       </main>
