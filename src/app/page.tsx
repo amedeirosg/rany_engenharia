@@ -27,7 +27,7 @@ export default function Home() {
   const sendEmail = (e: React.FormEvent) => {
     e.preventDefault();
 
-    var templateParams = {
+    let templateParams = {
       name: formData.name,
       email: formData.email,
       message: formData.message,
