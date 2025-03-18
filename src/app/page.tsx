@@ -1,7 +1,6 @@
 "use client";
 import Image from "next/image";
 import { MessageCircle, Instagram, Mail, MapPin } from "lucide-react";
-import { useRouter } from "next/router";
 import emailjs from "emailjs-com";
 import Cards from "@/Components/cards/cards";
 import { useState } from "react";
