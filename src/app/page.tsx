@@ -1,8 +1,58 @@
 "use client";
 import Image from "next/image";
 import { MessageCircle, Instagram, Mail, MapPin } from "lucide-react";
+import { useRouter } from "next/router";
+import emailjs from "emailjs-com";
 import Cards from "@/Components/cards/cards";
+import { useState } from "react";
 export default function Home() {
+  const [formData, setFormData] = useState({
+    name: "",
+    email: "",
+    message: "",
+  });
+
+  const handleChange = (
+    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
+  ) => {
+    setFormData({ ...formData, [e.target.name]: e.target.value });
+    console.log(formData);
+  };
+
+  const handleScroll = (id: string) => {
+    const element = document.getElementById(id);
+    if (element) {
+      element.scrollIntoView({ behavior: "smooth" });
+    }
+  };
+  const sendEmail = (e: React.FormEvent) => {
+    e.preventDefault();
+
+    var templateParams = {
+      name: formData.name,
+      email: formData.email,
+      message: formData.message,
+    };
+
+    emailjs
+      .send(
+        "service_wa5drbq", // Serviço ID configurado no EmailJS
+        "template_3rj9qfb", // Template ID configurado no EmailJS
+        templateParams,
+        "jrHXOpvqTNJwf99bJ" // User ID configurado no EmailJS
+      )
+      .then(
+        (result) => {
+          alert("E-mail enviado com sucesso!");
+          console.log(result.text);
+        },
+        (error) => {
+          alert("Erro ao enviar e-mail");
+          console.log(error.text);
+        }
+      );
+  };
+
   return (
     <div className="px-8 md:px-16">
       <header className="mt-14 md:flex md:justify-between md:items-center  ">
@@ -13,11 +63,17 @@ export default function Home() {
           <Image src={"/Logo.png"} width={240} height={70} alt="logo" />
         </div>
 
-        <ul className="md:flex gap-8 hidden">
-          <li className="text-[20px] relative cursor-pointer after:content-[''] after:absolute after:left-0 after:bottom-0 after:w-0 after:h-[2px] after:bg-black after:transition-all after:duration-300 hover:after:w-full">
+        <ul className="md:flex gap-8 hidden mr-40">
+          <li
+            onClick={() => handleScroll("Services")}
+            className="text-[20px] relative cursor-pointer after:content-[''] after:absolute after:left-0 after:bottom-0 after:w-0 after:h-[2px] after:bg-black after:transition-all after:duration-300 hover:after:w-full"
+          >
             Serviços
           </li>
-          <li className="text-[20px] relative cursor-pointer after:content-[''] after:absolute after:left-0 after:bottom-0 after:w-0 after:h-[2px] after:bg-black after:transition-all after:duration-300 hover:after:w-full">
+          <li
+            onClick={() => handleScroll("Contato")}
+            className="text-[20px] relative cursor-pointer after:content-[''] after:absolute after:left-0 after:bottom-0 after:w-0 after:h-[2px] after:bg-black after:transition-all after:duration-300 hover:after:w-full"
+          >
             Contato
           </li>
         </ul>
@@ -36,12 +92,15 @@ export default function Home() {
               </h2>
             </div>
             <div>
-              <button className="bg-black text-white p-3 rounded-2xl md:min-w-[250px] cursor-pointer hover:bg-gray-900 transition-bg duration-300 ease-in-out max-w-[230px] min-w-[230px]">
+              <button
+                onClick={() => handleScroll("Contato")}
+                className="bg-black text-white p-3 rounded-2xl md:min-w-[250px] cursor-pointer hover:bg-gray-900 transition-bg duration-300 ease-in-out max-w-[230px] min-w-[230px]"
+              >
                 Saiba mais
               </button>
             </div>
           </div>
-          <div className="hidden md:flex md:mr-16">
+          <div className="hidden md:flex md:mr-36">
             <Image
               src={"/logoHH.png"}
               width={460}
@@ -78,16 +137,12 @@ export default function Home() {
               subtitle="Elaboração de PMOC, gestão dea tivos e manutenção preventiva."
               image={"/ar.jpg"}
             />
+
             <Cards
-              title="PMOC"
-              subtitle="Elaboração de PMOC, gestão dea tivos e manutenção preventiva."
-              image={"/laudos.png"}
-            />
-            {/* <Cards
               title="Laudos e responsabilidades técnicas"
               subtitle="Emissões de ART, avaliações estruturais e de sistemas Mecânicos"
-              image={Laudo}
-            /> */}
+              image={"/laudos.png"}
+            />
           </div>
         </div>
         <div
@@ -100,21 +155,30 @@ export default function Home() {
             </h1>
             <div className="flex flex-col gap-10">
               <input
+                name="name"
+                onChange={handleChange}
                 type="text"
                 placeholder="Nome"
                 className="border-0 border-b-2 border-white focus:border-white focus:outline-none bg-transparent w-full pb-2"
               />
               <input
+                name="email"
+                onChange={handleChange}
                 type="text"
                 placeholder="E-mail"
                 className="border-0 border-b-2 border-white focus:border-white focus:outline-none bg-transparent w-full pb-2"
               />
               <textarea
+                name="message"
+                onChange={handleChange}
                 placeholder="Escreva sua mensagem..."
                 className="border-0 border-b-2 border-white focus:border-white focus:outline-none bg-transparent w-full h-[170px]"
               />
             </div>
-            <button className="bg-white text-black p-2.5 font-medium cursor-pointer hover:bg-gray-200">
+            <button
+              onClick={sendEmail}
+              className="bg-white text-black p-2.5 font-medium cursor-pointer hover:bg-gray-200"
+            >
               Enviar
             </button>
           </div>
