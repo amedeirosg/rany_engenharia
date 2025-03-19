@@ -80,9 +80,9 @@ export default function Home() {
       <main>
         <div
           id="HeroHeader"
-          className="flex justify-between items-center mt-[100px] "
+          className="flex justify-evenly items-center mt-[100px] "
         >
-          <div className="md:max-w-[527px] md:ml-16 text-center flex flex-col gap-6 md:text-left md:w-[50%] ">
+          <div className=" md:ml-16 text-center flex flex-col gap-6 md:text-left md:w-[50%] ">
             <div className="mb-[24px] flex flex-col gap-4 ">
               <h1 className="text-[40px] font-medium ">SOLUÇÕES EM PROJETOS</h1>
               <h2 className="text-[20px]">
