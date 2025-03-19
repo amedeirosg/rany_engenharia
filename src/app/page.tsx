@@ -62,7 +62,7 @@ export default function Home() {
           <Image src={"/Logo.png"} width={240} height={70} alt="logo" />
         </div>
 
-        <ul className="md:flex gap-8 hidden mr-40">
+        <ul className="md:flex gap-8 hidden ">
           <li
             onClick={() => handleScroll("Services")}
             className="text-[20px] relative cursor-pointer after:content-[''] after:absolute after:left-0 after:bottom-0 after:w-0 after:h-[2px] after:bg-black after:transition-all after:duration-300 hover:after:w-full"
@@ -82,7 +82,7 @@ export default function Home() {
           id="HeroHeader"
           className="flex justify-between items-center mt-[100px] "
         >
-          <div className="md:max-w-[527px] md:ml-16 text-center flex flex-col gap-6 md:text-left">
+          <div className="md:max-w-[527px] md:ml-16 text-center flex flex-col gap-6 md:text-left md:w-[50%] ">
             <div className="mb-[24px] flex flex-col gap-4 ">
               <h1 className="text-[40px] font-medium ">SOLUÇÕES EM PROJETOS</h1>
               <h2 className="text-[20px]">
@@ -99,10 +99,10 @@ export default function Home() {
               </button>
             </div>
           </div>
-          <div className="hidden md:flex md:mr-36">
+          <div className="hidden md:flex ">
             <Image
-              src={"/logoHH.png"}
-              width={460}
+              src={"/logoSimples.png"}
+              width={560}
               height={470}
               alt="logoRanyEngenharia"
             />
@@ -133,7 +133,7 @@ export default function Home() {
             />
             <Cards
               title="PMOC"
-              subtitle="Elaboração de PMOC, gestão dea tivos e manutenção preventiva."
+              subtitle="Elaboração de PMOC, gestão de ativos e manutenção preventiva."
               image={"/ar.jpg"}
             />
 
