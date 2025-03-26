@@ -1,7 +1,7 @@
 "use client";
 
 import { useEffect } from "react";
-//@ts-ignore
+//@ts-expect-error
 import TagManager from "react-gtm-module";
 
 const GTM_ID = "GTM-KKVCZ8CG"; // Substitua pelo seu ID do GTM
