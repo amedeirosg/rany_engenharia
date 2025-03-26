@@ -1,7 +1,7 @@
 "use client";
 
 import { useEffect } from "react";
-//@ts-expect-error
+//@ts-expect-error: O módulo 'react-gtm-module' não tem tipos adequados para TypeScript
 import TagManager from "react-gtm-module";
 
 const GTM_ID = "GTM-KKVCZ8CG"; // Substitua pelo seu ID do GTM
