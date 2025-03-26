@@ -14,7 +14,12 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <head></head>
+      <head>
+        <meta
+          name="facebook-domain-verification"
+          content="t99klkntvep3i50rm78gzm70598hob"
+        />
+      </head>
       <body>
         <noscript>
           <iframe
