@@ -70,7 +70,7 @@ export default function Structure() {
           </div>
           <div className="w-full md:w-1/2">
             <Image
-              src="/section1.jpg"
+              src="/section1.JPG"
               alt="Estrutura de aço"
               width={600}
               height={400}
@@ -94,7 +94,7 @@ export default function Structure() {
           </div>
           <div className="w-full md:w-1/2">
             <Image
-              src="/section2.jpg"
+              src="/section2.JPG"
               alt="Tecnologia em estruturas metálicas"
               width={600}
               height={400}
@@ -116,7 +116,7 @@ export default function Structure() {
           </div>
           <div className="w-full md:w-1/2">
             <Image
-              src="/section3.jpg"
+              src="/section3.JPG"
               alt="Sustentabilidade em estruturas metálicas"
               width={600}
               height={400}

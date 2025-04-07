@@ -5,12 +5,12 @@ import { useState } from "react";
 
 export default function ProjetosIndustriais() {
   const imagens = [
-    "/mec1.jpg",
+    "/mec1.JPG",
     "/mec2.jpg",
-    "/mec3.jpg",
+    "/mec3.JPG",
     "/mec4.jpg",
-    "/mec5.jpg",
-    "/mec6.jpg",
+    "/mec5.JPG",
+    "/mec6.JPG",
   ];
 
   const [imagemIndex, setImagemIndex] = useState<number | null>(null);
