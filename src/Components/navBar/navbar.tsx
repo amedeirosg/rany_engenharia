@@ -32,7 +32,7 @@ export default function NavBar() {
     <nav className="fixed w-full top-0 left-0 z-50 bg-[#FBFAFB] border-b border-gray-200 shadow-sm">
       <div className="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
         <Link href="/">
-          <Image src={"/logo.png"} width={200} height={200} alt="rany_logo" />
+          <Image src={"/Logo.png"} width={200} height={200} alt="rany_logo" />
         </Link>
 
         {/* Botão mobile */}
