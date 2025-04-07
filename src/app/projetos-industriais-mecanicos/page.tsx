@@ -25,7 +25,7 @@ export default function ProjetosIndustriais() {
 
   return (
     <div className="bg-white text-black font-sans">
-      {/* Banner */}
+      {/* Bannerx */}
       <section
         className="relative h-[80vh] flex items-center justify-center text-white overflow-hidden flex-col gap-4"
         style={{
