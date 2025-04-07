@@ -71,7 +71,7 @@ export default function ProjetosIndustriais() {
           </div>
           <div className="w-full md:w-1/2">
             <Image
-              src="/mecanico-section1.jpg"
+              src="/mec4.jpg"
               alt="Projeto industrial"
               width={600}
               height={400}
@@ -91,7 +91,7 @@ export default function ProjetosIndustriais() {
           </div>
           <div className="w-full md:w-1/2">
             <Image
-              src="/mecanico-section2.jpg"
+              src="/mec5.jpg"
               alt="Sistemas mecânicos industriais"
               width={600}
               height={400}

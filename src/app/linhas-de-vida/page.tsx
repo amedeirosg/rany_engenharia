@@ -4,7 +4,7 @@ import Image from "next/image";
 import { useState } from "react";
 
 export default function LifeLines() {
-  const imagens = ["/lv1.JPG", "/lv2.jpg", "/lv3.jpg", "/lv4.jpg"];
+  const imagens = ["/lv1.jpg", "/lv2.jpg", "/lv3.jpg", "/lv4.jpg"];
 
   const [imagemIndex, setImagemIndex] = useState<number | null>(null);
 
