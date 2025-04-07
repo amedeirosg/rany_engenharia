@@ -98,7 +98,7 @@ export default function Downloads() {
 
       {/* Filtro por categoria */}
       <div className="flex justify-center gap-4 mb-6 flex-wrap">
-        {["todos", "materiais", "normas"].map((cat) => (
+        {["todos", "materiais", "normas" as const].map((cat) => (
           <button
             key={cat}
             onClick={() => setActiveCategory(cat as any)}
