@@ -1,230 +1,214 @@
 "use client";
 import Image from "next/image";
-import { MessageCircle, Instagram, Mail, MapPin } from "lucide-react";
-import emailjs from "emailjs-com";
-import Cards from "@/Components/cards/cards";
-import { useState } from "react";
+import {
+  Target,
+  Eye,
+  ShieldCheck,
+  FileText,
+  Factory,
+  Link,
+  Wrench,
+} from "lucide-react";
+import { motion } from "framer-motion";
+
 export default function Home() {
-  const [formData, setFormData] = useState({
-    name: "",
-    email: "",
-    message: "",
-  });
-
-  const handleChange = (
-    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
-  ) => {
-    setFormData({ ...formData, [e.target.name]: e.target.value });
-    console.log(formData);
-  };
-
-  const handleScroll = (id: string) => {
-    const element = document.getElementById(id);
-    if (element) {
-      element.scrollIntoView({ behavior: "smooth" });
-    }
-  };
-  const sendEmail = (e: React.FormEvent) => {
-    e.preventDefault();
-
-    const templateParams = {
-      name: formData.name,
-      email: formData.email,
-      message: formData.message,
-    };
-
-    emailjs
-      .send(
-        "service_wa5drbq", // Serviço ID configurado no EmailJS
-        "template_3rj9qfb", // Template ID configurado no EmailJS
-        templateParams,
-        "jrHXOpvqTNJwf99bJ" // User ID configurado no EmailJS
-      )
-      .then(
-        (result) => {
-          alert("E-mail enviado com sucesso!");
-          console.log(result.text);
-        },
-        (error) => {
-          alert("Erro ao enviar e-mail");
-          console.log(error.text);
-        }
-      );
-  };
-
   return (
-    <div className="px-8 md:px-16">
-      <header className="mt-14 md:flex md:justify-between md:items-center  ">
-        <div
-          className="flex justify-center cursor-pointer"
-          onClick={() => window.location.reload()}
-        >
-          <Image src={"/Logo.png"} width={240} height={70} alt="logo" />
-        </div>
+    <div className="bg-[#FBFAFB] text-black">
+      {/* Hero */}
+      <motion.section
+        id="inicio"
+        className="relative w-full h-screen flex items-center justify-center text-center bg-cover bg-center overflow-hidden"
+        style={{ backgroundImage: "url('/hero.jpg')" }}
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ duration: 1 }}
+      >
+        <div className="absolute inset-0 z-10" />
 
-        <ul className="md:flex gap-8 hidden ">
-          <li
-            onClick={() => handleScroll("Services")}
-            className="text-[20px] relative cursor-pointer after:content-[''] after:absolute after:left-0 after:bottom-0 after:w-0 after:h-[2px] after:bg-black after:transition-all after:duration-300 hover:after:w-full"
-          >
-            Serviços
-          </li>
-          <li
-            onClick={() => handleScroll("Contato")}
-            className="text-[20px] relative cursor-pointer after:content-[''] after:absolute after:left-0 after:bottom-0 after:w-0 after:h-[2px] after:bg-black after:transition-all after:duration-300 hover:after:w-full"
-          >
-            Contato
-          </li>
-        </ul>
-      </header>
-      <main>
+        {/* Correção da linha branca no mobile */}
         <div
-          id="HeroHeader"
-          className="flex justify-evenly items-center mt-[100px] "
+          className="absolute -bottom-[1px] w-full h-12 md:h-24 bg-[#FBFAFB]"
+          style={{ clipPath: "polygon(100% 0%, 100% 100%, 0% 100%)" }}
+        />
+
+        <motion.div
+          className="relative z-20 px-6 max-w-4xl text-white"
+          initial={{ opacity: 0, y: 50 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 1 }}
         >
-          <div className=" md:ml-16 text-center flex flex-col gap-6 md:text-left md:w-[50%] ">
-            <div className="mb-[24px] flex flex-col gap-4 ">
-              <h1 className="text-[40px] font-medium ">SOLUÇÕES EM PROJETOS</h1>
-              <h2 className="text-[20px]">
-                Soluções em engenharia que garantem inovação, eficiência e
-                resultados personalizados para cada projeto.
-              </h2>
-            </div>
-            <div>
-              <button
-                onClick={() => handleScroll("Contato")}
-                className="bg-black text-white p-3 rounded-2xl md:min-w-[250px] cursor-pointer hover:bg-gray-900 transition-bg duration-300 ease-in-out max-w-[230px] min-w-[230px]"
+          <h1 className="text-5xl md:text-6xl font-bold leading-tight mb-6">
+            Excelência em projetos metálicos e mecânicos
+          </h1>
+          <p className="text-lg text-gray-200 mb-6 max-w-2xl mx-auto">
+            Estruturas metálicas, linhas de vida e soluções técnicas sob medida
+            para sua obra.
+          </p>
+          <a
+            href="https://wa.me/5531971360397"
+            target="_blank"
+            className="inline-block bg-white text-black font-medium rounded px-6 py-3 text-lg hover:bg-gray-200 transition"
+          >
+            SOLICITAR ORÇAMENTO
+          </a>
+        </motion.div>
+      </motion.section>
+
+      {/* Quem Somos */}
+      <motion.section
+        id="quem-somos"
+        className="py-20 px-6 max-w-5xl mx-auto text-center"
+        initial={{ opacity: 0, y: 50 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true }}
+        transition={{ duration: 0.8 }}
+      >
+        <h2 className="text-3xl font-semibold mb-8">Quem Somos</h2>
+        <p className="text-lg text-gray-700 mb-12 leading-relaxed">
+          Somos um escritório voltado para a elaboração de Projetos e Laudos
+          técnicos na área de Engenharia Mecânica com foco em Estruturas
+          Metálicas e Equipamentos Industriais.
+          <br />
+          <br />
+          Nosso objetivo é fornecer serviços especializados em Cálculo de
+          Construções metálicas, abrangendo desde o projeto estrutural até a
+          montagem no segmento Industrial, Comercial, Residencial, Rural, entre
+          outros.
+          <br />
+          <br />
+          Realizamos também o desenvolvimento de Conjuntos de Máquinas
+          Industriais e Sistemas de Linhas de Vida para os segmentos
+          pertinentes.
+          <br />
+          <br />
+          Confiança, Qualidade, Segurança, Inovação e Economia são valores nos
+          quais sempre firmamos nossas bases.
+        </p>
+
+        <div className="py-20 px-6 max-w-6xl mx-auto">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+            {[
+              {
+                Icon: Target,
+                title: "Missão",
+                text: "Fornecer soluções eficientes e personalizadas em projetos de engenharia mecânica e estrutural, com qualidade, precisão e compromisso.",
+              },
+              {
+                Icon: Eye,
+                title: "Visão",
+                text: "Ser referência no desenvolvimento de projetos, destacando-se pela confiabilidade, inovação e excelência técnica.",
+              },
+            ].map((item, index) => (
+              <motion.div
+                key={index}
+                className="bg-white p-6 rounded-xl shadow-md text-center border border-gray-200"
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.6, delay: index * 0.2 }}
               >
-                Saiba mais
-              </button>
-            </div>
+                <item.Icon className="w-8 h-8 mx-auto mb-2" />
+                <h3 className="text-xl font-semibold">{item.title}</h3>
+                <p className="text-gray-600 mt-2">{item.text}</p>
+              </motion.div>
+            ))}
           </div>
-          <div className="hidden md:flex ">
-            <Image
-              src={"/logoSimples.png"}
-              width={560}
-              height={470}
-              alt="logoRanyEngenharia"
-            />
-          </div>
-        </div>
-        <div id="Services" className="mt-[160px] mb-[120px]">
-          <h1 className="text-[18px] font-medium">Serviços</h1>
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-            <Cards
-              title="Projetos Mecânicos"
-              subtitle="Desenvolvimento de projeto, montagem e dimensionamento de equipamentos mecânicos industriais"
-              image={"/rosca.jpg"}
-            />
-            <Cards
-              title="Estruturas Metálicas"
-              subtitle="Projeto, dimensionamento e montagem de galpões, mezaninos e passarelas."
-              image={"/galpao.jpg"}
-            />
-            <Cards
-              title="Linhas de vida"
-              subtitle="Projeto, inspeção, laudos e adequações de linhas de vida."
-              image={"/linha_de_vida.jpeg"}
-            />
-            <Cards
-              title="Escadas Marinheiros"
-              subtitle="Projeto, inspeção, laudos e adequações de escadas marinheiro."
-              image={"/escada_marinheiro.jpg"}
-            />
-            <Cards
-              title="PMOC"
-              subtitle="Elaboração de PMOC, gestão de ativos e manutenção preventiva."
-              image={"/ar.jpg"}
-            />
 
-            <Cards
-              title="Laudos e responsabilidades técnicas"
-              subtitle="Emissões de ART, avaliações estruturais e de sistemas Mecânicos"
-              image={"/laudos.png"}
-            />
-          </div>
+          <motion.div
+            className="mt-6 bg-white p-6 rounded-xl shadow-md text-center border border-gray-200"
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6, delay: 0.4 }}
+          >
+            <ShieldCheck className="w-8 h-8 mx-auto mb-2" />
+            <h3 className="text-xl font-semibold">Valores</h3>
+            <ul className="text-gray-600 mt-2 space-y-2 text-left">
+              <li>
+                <strong>Compromisso com a Qualidade e Segurança</strong> –
+                Atender aos mais altos padrões técnicos e normativos.
+              </li>
+              <li>
+                <strong>Inovação</strong> – Buscar novas soluções e tecnologias
+                constantemente.
+              </li>
+              <li>
+                <strong>Ética e Transparência</strong> – Atuar com integridade
+                em todas as relações.
+              </li>
+              <li>
+                <strong>Satisfação do Cliente</strong> – Superar expectativas
+                com soluções eficazes.
+              </li>
+            </ul>
+          </motion.div>
         </div>
-        <div
-          id="Contato"
-          className="relative  bg-black text-white -mx-8 p-8 md:-mx-16 md:flex md:justify-around md:items-center"
-        >
-          <div className="mb-[80px] flex flex-col gap-[40px] md:min-w-[500px]">
-            <h1 className="text-[24px] font-medium text-center">
-              Entre em contato
-            </h1>
-            <div className="flex flex-col gap-10">
-              <input
-                name="name"
-                onChange={handleChange}
-                type="text"
-                placeholder="Nome"
-                className="border-0 border-b-2 border-white focus:border-white focus:outline-none bg-transparent w-full pb-2"
-              />
-              <input
-                name="email"
-                onChange={handleChange}
-                type="text"
-                placeholder="E-mail"
-                className="border-0 border-b-2 border-white focus:border-white focus:outline-none bg-transparent w-full pb-2"
-              />
-              <textarea
-                name="message"
-                onChange={handleChange}
-                placeholder="Escreva sua mensagem..."
-                className="border-0 border-b-2 border-white focus:border-white focus:outline-none bg-transparent w-full h-[170px]"
-              />
-            </div>
-            <button
-              onClick={sendEmail}
-              className="bg-white text-black p-2.5 font-medium cursor-pointer hover:bg-gray-200"
-            >
-              Enviar
-            </button>
-          </div>
-          <div className="flex flex-col gap-8 md:gap-20">
-            <a
-              href="https://wa.me/5531971360397"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <div className="flex flex-col gap-2 justify-center items-center">
-                <div className="flex gap-2 text-[16px] font-bold">
-                  <MessageCircle /> <h2>WHATSAPP </h2>
-                </div>
-                <h2 className="font-light">(31) 97136-0397</h2>
-              </div>
-            </a>
+      </motion.section>
 
-            <div className="flex flex-col gap-2 justify-center items-center">
-              <div className="flex gap-2 text-[16px] font-bold">
-                <Mail /> <h2>E-mail</h2>
-              </div>
-              <h2 className="font-light">joaopaulor1999@gmail.com</h2>
-            </div>
-            <div className="flex flex-col gap-2 justify-center items-center">
-              <div className="flex gap-2 text-[16px] font-bold">
-                <MapPin /> <h2>Local</h2>
-              </div>
-              <h2 className="font-light">Pedro Leopoldo, Minas Gerais.</h2>
-            </div>
-            <a
-              href="https://www.instagram.com/ranyengenharia?igsh=NXk0MjA3OGo3OWJq&utm_source=qr"
-              target="_blank"
-              rel="noopener noreferrer"
+      {/* Serviços */}
+      <motion.section
+        className="py-20 bg-[#FBFAFB] px-6 max-w-6xl mx-auto text-center"
+        initial={{ opacity: 0, y: 50 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true }}
+        transition={{ duration: 0.8 }}
+      >
+        <h2 className="text-3xl font-semibold mb-12">Nossos Serviços</h2>
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-8">
+          {[
+            {
+              href: "/estruturas-metalicas",
+              Icon: Factory,
+              color: "text-blue-600",
+              title: "Estruturas Metálicas",
+              desc: "Projetos e fabricação de estruturas sob medida.",
+            },
+            {
+              href: "/linhas-de-vida",
+              Icon: Link,
+              color: "text-green-600",
+              title: "Linhas de Vida",
+              desc: "Sistemas de segurança para trabalhos em altura.",
+            },
+            {
+              href: "/projetos-industriais-mecanicos",
+              Icon: Wrench,
+              color: "text-orange-600",
+              title: "Projetos Mecânicos",
+              desc: "Soluções industriais em equipamentos e máquinas.",
+            },
+            {
+              href: "/laudos",
+              Icon: FileText,
+              color: "text-purple-600",
+              title: "Laudos Técnicos",
+              desc: "Emissão de laudos conforme exigências normativas.",
+            },
+          ].map((item, index) => (
+            <motion.a
+              key={index}
+              href={item.href}
+              whileHover={{ scale: 1.05 }}
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5, delay: index * 0.2 }}
             >
-              <div className="flex flex-col gap-2 justify-center items-center">
-                <div className="flex gap-2 text-[16px] font-bold">
-                  <Instagram /> <h2>Instagram</h2>
+              <div className="flex flex-col bg-white p-6 rounded-xl shadow-lg transition duration-300 cursor-pointer min-h-[180px]">
+                <div className="flex flex-col items-center">
+                  <item.Icon className={`w-8 h-8 mb-2 ${item.color}`} />
+                  <h3 className="text-lg font-semibold text-gray-800 text-center">
+                    {item.title}
+                  </h3>
+                  <p className="text-sm text-gray-600 mt-1 text-center">
+                    {item.desc}
+                  </p>
                 </div>
               </div>
-            </a>
-          </div>
-
-          <div className="flex items-center justify-center mt-[16px] md:absolute bottom-10 right-20">
-            <Image src={"/watermark.png"} alt="logo" width={200} height={200} />
-          </div>
+            </motion.a>
+          ))}
         </div>
-      </main>
+      </motion.section>
     </div>
   );
 }
