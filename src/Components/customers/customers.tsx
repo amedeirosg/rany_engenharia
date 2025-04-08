@@ -20,7 +20,7 @@ export default function Customers() {
               ))}
             </div>
             <p className="text-gray-600 mt-2">
-              Com base em <strong>32 avaliações</strong>
+              Com base em <strong>16 avaliações</strong>
             </p>
             <Image
               src="/google-logo.png"
@@ -33,20 +33,20 @@ export default function Customers() {
             {[
               {
                 name: "Matheus Mendes",
-                date: "21/10/2022",
+                date: "21/10/2024",
                 text: "Excelência em atendimento. Super recomendo. Parabéns!",
                 profile_picture: "/MM_Customer.png",
               },
               {
                 name: "João Castro",
-                date: "07/04/2023",
-                text: "Melhor equipe!",
+                date: "07/04/2024",
+                text: "Realizei um projeto de galpão com o Engenheiro João, muito atencioso e técnico, recomendo! ",
                 profile_picture: "/JC_customer.png",
               },
               {
                 name: "Roberta",
-                date: "14/04/2023",
-                text: "Ótima empresa, muito satisfeito com o resultado...",
+                date: "14/04/2024",
+                text: "Muito satisfeita com o projeto de adequação em linha de vida, todas asnormas atendidas!",
                 profile_picture: "/R_customer.png",
               },
             ].map((review, index) => (
