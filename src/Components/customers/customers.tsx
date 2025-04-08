@@ -46,7 +46,7 @@ export default function Customers() {
               {
                 name: "Roberta",
                 date: "14/04/2024",
-                text: "Muito satisfeita com o projeto de adequação em linha de vida, todas asnormas atendidas!",
+                text: "Muito satisfeita com o projeto de adequação em linha de vida, todas as normas atendidas!",
                 profile_picture: "/R_customer.png",
               },
             ].map((review, index) => (
