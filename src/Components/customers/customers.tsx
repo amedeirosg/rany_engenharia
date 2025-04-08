@@ -35,7 +35,7 @@ export default function Customers() {
                 name: "Matheus Mendes",
                 date: "21/10/2022",
                 text: "Excelência em atendimento. Super recomendo. Parabéns!",
-                profile_picture: "/MM_customer.png",
+                profile_picture: "/MM_Customer.png",
               },
               {
                 name: "João Castro",
