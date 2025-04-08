@@ -26,7 +26,7 @@ export default function RootLayout({
           content="t99klkntvep3i50rm78gzm70598hob"
         />
       </head>
-      <body className="font-sans bg-[#FBFAFB]">
+      <body className=" bg-[#FBFAFB]">
         <noscript>
           <iframe
             src="https://www.googletagmanager.com/ns.html?id=GTM-KKVCZ8CG"

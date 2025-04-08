@@ -8,6 +8,7 @@ export default function LaudoTecnico() {
     "/laudo.jpg",
     "/analise_cons_sust.png",
     "/analise_desloc_cavalete.png",
+    "/insp.jpg",
   ];
 
   const [imagemIndex, setImagemIndex] = useState<number | null>(null);
@@ -21,25 +22,26 @@ export default function LaudoTecnico() {
     );
 
   return (
-    <div className="bg-white text-black font-sans">
+    <div className="bg-white text-black ">
       {/* Banner */}
       <section
         className="relative h-[80vh] flex items-center justify-center text-white overflow-hidden flex-col gap-4"
         style={{
-          backgroundImage: "url('/hero.jpg')",
+          backgroundImage: "url('/bannerLaudo.jpg')",
           backgroundSize: "cover",
           backgroundPosition: "center",
         }}
       >
+        <div className="absolute inset-0 bg-black/30 z-0" />
         <div
           className="absolute bottom-0 w-full h-24 bg-white"
           style={{ clipPath: "polygon(100% 0%, 100% 100%, 0% 100%)" }}
         />
         <div className="relative z-10 text-center px-6">
-          <h1 className="text-5xl md:text-6xl font-bold leading-tight mb-6">
+          <h1 className="text-5xl md:text-6xl font-bold leading-tight mb-6 drop-shadow-2xl">
             Laudo Técnico
           </h1>
-          <p className="text-lg text-gray-200 mb-6 max-w-2xl mx-auto">
+          <p className="text-lg text-gray-200 mb-6 max-w-2xl mx-auto drop-shadow-2xl">
             Diagnóstico técnico preciso para segurança, conformidade e tomadas
             de decisão assertivas em projetos industriais.
           </p>
@@ -164,6 +166,32 @@ export default function LaudoTecnico() {
           </div>
         )}
       </section>
+
+      {/* Projetos & Serviços de Engenharia */}
+      <section className="bg-[#f9f9f9] py-20 px-4 text-center">
+        <div className="max-w-4xl mx-auto space-y-8">
+          <h2 className="text-4xl md:text-5xl font-bold text-black">
+            Projetos & Serviços de Engenharia
+          </h2>
+          <p className="text-gray-700 text-lg md:text-xl">
+            Nós assumimos todas as etapas do seu projeto!
+            <br />
+            <span className="font-semibold text-black">
+              Confira o que oferecemos:
+            </span>
+          </p>
+
+          <div className="bg-white p-8 rounded-2xl shadow-lg grid grid-cols-1 sm:grid-cols-2 gap-x-12 gap-y-4 text-green-700 text-base md:text-lg font-medium text-left">
+            <p>✅ Estrutural</p>
+            <p>✅ Linhas de Vida</p>
+            <p>✅ Elevadores</p>
+            <p>✅ Playgrounds</p>
+            <p>✅ Andaimes</p>
+            <p>✅ Componentes Mecânicos</p>
+          </div>
+        </div>
+      </section>
+
       {/* Chamada para contato */}
       <section className="bg-gray-50 py-12 text-center">
         <h3 className="text-xl font-semibold mb-2">

@@ -11,6 +11,10 @@ export default function ProjetosIndustriais() {
     "/mec4.jpg",
     "/mec5.JPG",
     "/mec6.JPG",
+    "/mec7.JPG",
+    "/mec8.JPG",
+    "/mec9.JPG",
+    "/mec10.JPG",
   ];
 
   const [imagemIndex, setImagemIndex] = useState<number | null>(null);
@@ -24,25 +28,26 @@ export default function ProjetosIndustriais() {
     );
 
   return (
-    <div className="bg-white text-black font-sans">
+    <div className="bg-white text-black ">
       {/* Bannerx */}
       <section
-        className="relative h-[80vh] flex items-center justify-center text-white overflow-hidden flex-col gap-4"
+        className="relative h-[80vh] flex items-center justify-center text-white overflow-hidden flex-col gap-4 "
         style={{
-          backgroundImage: "url('/hero.jpg')",
+          backgroundImage: "url('/bannerPjMec.jpg')",
           backgroundSize: "cover",
           backgroundPosition: "center",
         }}
       >
+        <div className="absolute inset-0 bg-black/50 z-0 " />
         <div
           className="absolute bottom-0 w-full h-24 bg-white"
           style={{ clipPath: "polygon(100% 0%, 100% 100%, 0% 100%)" }}
         />
         <div className="relative z-10 text-center px-6">
-          <h1 className="text-5xl md:text-6xl font-bold leading-tight mb-6">
+          <h1 className="text-5xl md:text-6xl font-bold leading-tight mb-6 drop-shadow-2xl">
             Projetos Industriais Mecânicos
           </h1>
-          <p className="text-lg text-gray-200 mb-6 max-w-2xl mx-auto">
+          <p className="text-lg text-gray-200 mb-6 max-w-2xl mx-auto drop-shadow-2xl">
             Desenvolvimento de soluções sob medida para processos industriais,
             otimizando desempenho, segurança e eficiência operacional.
           </p>
@@ -71,7 +76,7 @@ export default function ProjetosIndustriais() {
           </div>
           <div className="w-full md:w-1/2">
             <Image
-              src="/mec4.jpg"
+              src="/mec1.jpg"
               alt="Projeto industrial"
               width={600}
               height={400}
@@ -91,7 +96,7 @@ export default function ProjetosIndustriais() {
           </div>
           <div className="w-full md:w-1/2">
             <Image
-              src="/mec5.JPG"
+              src="/mec2.JPG"
               alt="Sistemas mecânicos industriais"
               width={600}
               height={400}
@@ -103,7 +108,7 @@ export default function ProjetosIndustriais() {
 
       {/* Galeria de Imagens */}
       <section className="w-full py-16">
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 px-4">
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4 px-4">
           {imagens.map((src, index) => (
             <div
               key={index}
@@ -160,6 +165,32 @@ export default function ProjetosIndustriais() {
             </div>
           </div>
         )}
+      </section>
+
+      {/* Projetos & Serviços de Engenharia */}
+      <section className="bg-[#f9f9f9] py-20 px-4 text-center">
+        <div className="max-w-4xl mx-auto space-y-8">
+          <h2 className="text-4xl md:text-5xl font-bold text-black">
+            Projetos & Serviços de Engenharia
+          </h2>
+          <p className="text-gray-700 text-lg md:text-xl">
+            Nós assumimos todas as etapas do seu projeto!
+            <br />
+            <span className="font-semibold text-black">
+              Confira o que oferecemos:
+            </span>
+          </p>
+
+          <div className="bg-white p-8 rounded-2xl shadow-lg grid grid-cols-1 sm:grid-cols-2 gap-x-12 gap-y-4 text-green-700 text-base md:text-lg font-medium text-left">
+            <p>✅ Pontes Rolantes</p>
+            <p>✅ Escadas Marinheiro</p>
+            <p>✅ Esteiras Transportadoras</p>
+            <p>✅ Roscas Transportadoras</p>
+            <p>✅ Moegas</p>
+            <p>✅ Pórticos Fixos e Móveis</p>
+            <p>✅ Componentes/peças Mecânicas</p>
+          </div>
+        </div>
       </section>
 
       {/* Chamada para contato */}

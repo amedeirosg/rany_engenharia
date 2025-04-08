@@ -20,7 +20,7 @@ export default function Customers() {
               ))}
             </div>
             <p className="text-gray-600 mt-2">
-              Com base em <strong>X avaliações</strong>
+              Com base em <strong>32 avaliações</strong>
             </p>
             <Image
               src="/google-logo.png"
@@ -32,19 +32,22 @@ export default function Customers() {
           <div className="grid md:grid-cols-3 gap-6">
             {[
               {
-                name: "Fernanda Castro",
+                name: "Matheus Mendes",
                 date: "21/10/2022",
                 text: "Excelência em atendimento. Super recomendo. Parabéns!",
+                profile_picture: "/MM_customer.png",
               },
               {
-                name: "Crislane Silva",
-                date: "20/10/2022",
+                name: "João Castro",
+                date: "07/04/2023",
                 text: "Melhor equipe!",
+                profile_picture: "/JC_customer.png",
               },
               {
-                name: "Martins Diego",
-                date: "20/10/2022",
+                name: "Roberta",
+                date: "14/04/2023",
                 text: "Ótima empresa, muito satisfeito com o resultado...",
+                profile_picture: "/R_customer.png",
               },
             ].map((review, index) => (
               <div
@@ -52,7 +55,13 @@ export default function Customers() {
                 className="bg-[#FBFAFB] border border-gray-200 rounded-xl p-6 shadow-sm text-left"
               >
                 <div className="flex items-center gap-2 mb-2">
-                  <div className="w-10 h-10 bg-gray-300 rounded-full" />
+                  <Image
+                    src={review.profile_picture}
+                    alt="comment"
+                    width={100}
+                    height={100}
+                    className="w-10 h-10 bg-gray-300 rounded-full"
+                  />
                   <div>
                     <div className="font-semibold text-gray-900">
                       {review.name}

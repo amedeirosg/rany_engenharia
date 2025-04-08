@@ -17,7 +17,7 @@ export default function LifeLines() {
     );
 
   return (
-    <div className="bg-white text-black font-sans">
+    <div className="bg-white text-black ">
       {/* Banner */}
       <section
         className="relative h-[80vh] flex items-center justify-center text-white overflow-hidden flex-col gap-4"
@@ -98,7 +98,7 @@ export default function LifeLines() {
               alt="Linha de vida vertical"
               width={600}
               height={400}
-              className="rounded-lg shadow-md w-full h-auto object-cover"
+              className="rounded-lg shadow-md w-full h-auto object-cover max-h-80"
             />
           </div>
         </div>
@@ -187,6 +187,29 @@ export default function LifeLines() {
             </div>
           </div>
         )}
+      </section>
+
+      {/* Projetos & Serviços de Engenharia */}
+      <section className="bg-[#f9f9f9] py-20 px-4 text-center">
+        <div className="max-w-4xl mx-auto space-y-8">
+          <h2 className="text-4xl md:text-5xl font-bold text-black">
+            Projetos & Serviços de Engenharia
+          </h2>
+          <p className="text-gray-700 text-lg md:text-xl">
+            Nós assumimos todas as etapas do seu projeto!
+            <br />
+            <span className="font-semibold text-black">
+              Confira o que oferecemos:
+            </span>
+          </p>
+
+          <div className="bg-white p-8 rounded-2xl shadow-lg grid grid-cols-1 sm:grid-cols-2 gap-x-12 gap-y-4 text-green-700 text-base md:text-lg font-medium text-left">
+            <p>✅ Linhas de Vida Fixa</p>
+            <p>✅ Linhas de Vida Móveis</p>
+            <p>✅ Simulação dos Pontos de Ancoragem</p>
+            <p>✅ Adequação de linhas existentes</p>
+          </div>
+        </div>
       </section>
 
       {/* Chamada para contato */}

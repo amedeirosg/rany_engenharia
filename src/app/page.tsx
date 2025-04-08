@@ -36,10 +36,10 @@ export default function Home() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1 }}
         >
-          <h1 className="text-5xl md:text-6xl font-bold leading-tight mb-6">
+          <h1 className="text-5xl md:text-6xl font-bold leading-tight mb-6 drop-shadow-2xl">
             Excelência em projetos metálicos e mecânicos
           </h1>
-          <p className="text-lg text-gray-200 mb-6 max-w-2xl mx-auto">
+          <p className="text-lg text-gray-200 mb-6 max-w-2xl mx-auto drop-shadow-2xl">
             Estruturas metálicas, linhas de vida e soluções técnicas sob medida
             para sua obra.
           </p>
