@@ -40,8 +40,8 @@ export default function Home() {
             Excelência em projetos metálicos e mecânicos
           </h1>
           <p className="text-lg text-gray-200 mb-6 max-w-2xl mx-auto drop-shadow-2xl">
-            Estruturas metálicas, linhas de vida e soluções técnicas sob medida
-            para sua obra.
+            Estruturas metálicas, linhas de vida e projetos
+            mecânicos industriais.
           </p>
           <a
             href="https://wa.me/5531971360397"

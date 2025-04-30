@@ -32,21 +32,21 @@ export default function Customers() {
           <div className="grid md:grid-cols-3 gap-6">
             {[
               {
-                name: "Matheus Mendes",
-                date: "21/10/2024",
-                text: "Excelência em atendimento. Super recomendo. Parabéns!",
+                name: "Mecia Ribeiro",
+                date: "09/04/2025",
+                text: "Recebemos uma visita técnica do João, um ótimo profissional, recomendo.",
                 profile_picture: "/MM_Customer.png",
               },
               {
-                name: "João Castro",
-                date: "07/04/2024",
-                text: "Realizei um projeto de galpão com o Engenheiro João, muito atencioso e técnico, recomendo! ",
+                name: "João Oliveira",
+                date: "07/04/2025",
+                text: "Sou representante da empresa Ardomig aqui em Belo Horizonte - Mg , precisei de laudos para alguns itens da empresa , e tive muito sucesso com o João , mostrando eficiência, pois tinha um prazo bem curto pra apresentar esse laudo pros auditores fiscais . Me ajudou bastante . Super recomendo ",
                 profile_picture: "/JC_customer.png",
               },
               {
-                name: "Roberta",
-                date: "14/04/2024",
-                text: "Muito satisfeita com o projeto de adequação em linha de vida, todas as normas atendidas!",
+                name: "Marcus Vinicius Freitas",
+                date: "22/04/2025",
+                text: "Experiência muito boa, recomendo a Rany Engenharia pela excelência no atendimento, comprometimento com prazos e pela qualidade técnica dos projetos entregues.",
                 profile_picture: "/R_customer.png",
               },
             ].map((review, index) => (
